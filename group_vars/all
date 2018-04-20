@@ -1,0 +1,31 @@
+user:
+    name: mike
+    uid: 1000
+    group: mike
+
+hostname: c642r
+
+dotfiles:
+    url: git@github.com:pigmonkey/dotfiles.git
+    destination: projects/dotfiles
+
+ssh:
+    port: 22
+    user_key: /root/id_rsa
+    enable_sshd: False
+
+video_drivers:
+    - libva-intel-driver
+
+base_packages:
+    - base-devel
+    - git
+    - rsync
+    - strace
+    - lsof
+    - sysstat
+    - ruby
+    - screen
+
+passwordless_sudo:
+    - /usr/bin/openvpn*

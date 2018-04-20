@@ -1,0 +1,18 @@
+---
+- hosts: localhost
+  become: yes
+  roles:
+    - { role: base, tags: ['base'] }
+    - { role: dotfiles, tags: ['dotfiles'] }
+    - { role: i3, tags: ['i3'] }
+    - { role: iptables, tags: ['iptables'] }
+    - { role: laptop, tags: ['laptop'] }
+    - { role: nettools, tags: ['nettools'] }
+    - { role: networkmanager, tags: ['networkmanager'] }
+    - { role: sound, tags: ['sound'] }
+    - { role: ssh, tags: ['ssh'] }
+    - { role: x, tags: ['x'] }
+
+  vars_prompt:
+    - name: user_password
+      prompt: "Enter desired user password"
